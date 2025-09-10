@@ -17,8 +17,6 @@ function HomePage(){
 <>
 
     <h1 className="text-center text-4xl font-bold my-8">Note-Taker</h1>
-
-
     {products.map((blog) =>(
         
         <BlogIcon key={blog._id} blog={blog} />

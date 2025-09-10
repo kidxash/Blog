@@ -6,11 +6,7 @@ import { useEffect } from 'react'
 
 
 function App() {
-    useEffect(() => {
-    document.body.style.backgroundColor = "darksalmon";
-    // Optional: remove default margin for full coverage
-    document.body.style.margin = "0";
-  }, []);
+  
 
 
   return (
@@ -18,11 +14,12 @@ function App() {
     
     
       <Navbar />
-      
+      <div className='bg-orange-200 pt-20 min-h-screen'>
         <Routes>
           <Route path='/' element ={<HomePage />} />
           <Route path='/create' element ={<CreatePage />} />
         </Routes>
+        </div>
     </>
   )
 }

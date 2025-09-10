@@ -16,13 +16,7 @@ function HomePage(){
     return(
 <>
 
-    <h1 style={{
-    textAlign: "center", 
-    marginTop: "80px", 
-    color: "white",
-    
-
-    }}>Welcome to My Personal Blog Page</h1>
+    <h1 className="text-center text-4xl font-bold my-8">Note-Taker</h1>
 
 
     {products.map((blog) =>(

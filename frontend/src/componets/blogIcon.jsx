@@ -20,7 +20,7 @@ function BlogIcon({blog}) {
         <>            
             <div 
                 onClick={handleShowBlog}
-                className="bg-yellow-800 text-white p-4 m-4 mt-25 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-1/2 mx-auto cursor-pointer"
+                className="bg-yellow-800 text-white p-4 m-4 mt-10 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 w-1/2 mx-auto cursor-pointer"
             >
                 <h1 className="text-lg font-bold">{blog.Title}</h1>
                 <h3 className="text-sm">Click here to continue</h3>

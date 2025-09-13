@@ -13,9 +13,7 @@ function CreatePage(){
 
 
     const  Add = async () => {
-        console.log("Add function called");
-        console.log("Blog data:", blog);
-        
+      
         try {
             const res = await createBlogs(blog);
             console.log("Response:", res);
@@ -35,56 +33,43 @@ function CreatePage(){
 
 
 return(<>
-<div> 
-    <div style={{
-     textAlign: "center", 
-     }}>
+<div className="max-w-4xl mx-auto p-6 mt-20">
+            <div className="bg-white shadow-lg rounded-lg p-8">
+                <div className="mb-6 flex flex-col items-start">
+                    <h1 className="text-3xl font-bold text-gray-800 mb-6 text-left w-full h-5 flex justify-left">Create New Note</h1>
+                    <textarea
+                        type="text"
+                        placeholder="Click Here To Create Title"
+                        value={blog.Title}
+                        onChange={(e) => newBlog({ ...blog, Title: e.target.value })}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 mb-2 text-left mt-1.5"
+                        style={{ maxWidth: "600px" }}
+                    />
+                </div>
 
-    <u style={{color: "white"}}>
-    <textarea type="text" 
-    placeholder="Click Here To Create Title" 
-    value={blog.Title}
-    onChange={(e) => newBlog({...blog,  Title:e.target.value})}
-    style={{
-    textAlign: "center", 
-    marginTop: "90px", 
-    color: "white",
-    backgroundColor: "darksalmon",
-    outline: "none",
-    border:"none",
-    width: "500px",
-    height: "40px",
-    fontSize: "1.5rem", 
-    }}
 
-    />
-
-   </u>
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4 flex justify-left  ">Notes Content</h2>
+        <div className="w-full flex justify-center">
+        <textarea
+            type="text"
+            placeholder="Start typing here"
+            value={blog.Info}
+            onChange={(e) => newBlog({ ...blog, Info: e.target.value })}
+            className="w-full h-76 max-w-3xl px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-left"
+            style={{ resize: "vertical" }}
+        />
+        </div>
+    </div>
 </div>
 
-   <div style={{
-     textAlign: "center", 
-     }}>
-  <textarea type="text" placeholder="start typing here" style={{
-    width: "80%",
-    height: "500px",
-    fontSize: "1.2rem",
-    background: "beige"
-  }}
-  value={blog.Info}
-  onChange={(e) => newBlog({...blog, Info:e.target.value})}
-  />
 
-
-</div> 
-<div style={{textAlign: "center", }}>
-
-<button style={{    
-    textAlign: "center"
-}}
-onClick  ={() => {Add()} }
-  >Submit Blog </button>
-</div>
+<div className="flex justify-center mt-4">
+    <button
+        className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded shadow"
+        onClick={() => { Add(); }}
+    >
+        Submit Blog
+    </button>
 </div>
 
 </>
